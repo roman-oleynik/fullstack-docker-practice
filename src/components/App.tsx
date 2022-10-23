@@ -1,19 +1,27 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-export function Counter() {
-  const [count, setCount] = useState(0);
-  return <>
-    <button onClick={() => setCount(count - 1)}>-</button>
-    <div>{count}</div>
-    <button onClick={() => setCount(count + 1)}>+</button>
-  </>
+interface TodoItem {
+  name: string
+}
+
+export function Todos() {
+  const [data, setData] = useState<TodoItem[]>([]);
+
+  useEffect(() => {
+    fetch('/api/todos')
+    .then(res => {
+      return res.json()
+    })
+    .then(d => setData(d.todos))
+  }, []);
+  console.log(data);
+  return <>{data.map(el => <h1>{el.name}</h1>)}</>;
 }
 
 export function App() {
   return (
    <div>
-    azazaza
     <Outlet />
     <nav>
       <ul>
@@ -21,7 +29,7 @@ export function App() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/chars">Chars</Link>
+          <Link to="/todos">Todos</Link>
         </li>
       </ul>
     </nav>

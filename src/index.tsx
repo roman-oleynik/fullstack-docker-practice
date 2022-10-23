@@ -4,7 +4,7 @@ import {
     RouterProvider,
     Route,
   } from "react-router-dom";
-import { App, Counter } from './components/App';
+import { App, Todos } from './components/App';
 import './styles/index.scss';
 
 const router = createBrowserRouter([
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
       element: <App />,
       children: [
         {
-            path: '/chars',
-            element: <Counter />
+            path: '/todos',
+            element: <Todos />
         }
       ],
     },
