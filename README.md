@@ -2,15 +2,15 @@
 
 ![image](https://user-images.githubusercontent.com/35280077/197367697-14f2c9dc-65e4-4501-b50c-7f5e03e6cef6.png)
 
-Stack to implement:
+## Stack:
 
 - React
 - Express + DynamoDB
 
 Also, some CI/CD is going to be added (trying on several ones: Travis, Codebuild, Jenkins),
-and the other checks like linting, codestyle, docker, via Github Actions. The created container will be deployed to Amazon ECS.
+and the other checks like linting, codestyle, docker, via Github Actions. The created container is gonna be deployed to Amazon ECS.
 
-TO-DO:
+## TO-DO:
 
 - Linter
 - Docker
