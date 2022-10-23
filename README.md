@@ -4,7 +4,7 @@
 
 ## Stack:
 
-- React
+- React/Typescript
 - Express + DynamoDB
 
 Also, some CI/CD is going to be added (trying on several ones: Travis, Codebuild, Jenkins),
