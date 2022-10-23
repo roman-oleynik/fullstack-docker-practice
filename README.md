@@ -13,6 +13,7 @@ and the other checks like linting, codestyle, docker, via Github Actions. The cr
 ## TO-DO:
 
 - Linter
+- Tests (Jest)
 - Docker
 - CI/CD and onter Github Actions
 - AWS ECS
