@@ -4,19 +4,13 @@ import {
     RouterProvider,
     Route,
   } from "react-router-dom";
-import { App, Todos } from './components/App';
+import { App } from './components/App';
 import './styles/index.scss';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <App />,
-      children: [
-        {
-            path: '/todos',
-            element: <Todos />
-        }
-      ],
     },
   ]);
 
