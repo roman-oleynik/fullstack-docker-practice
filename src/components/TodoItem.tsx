@@ -59,7 +59,7 @@ export function TodoItem({ data, onToggleIsDone, onRemove, onEditName }: TodoIte
           className="btn"
           onClick={() => {
             setInputValue(name);
-            setIsEditModeEnabled(true)
+            setIsEditModeEnabled(true);
           }}
         >
           Edit <span className="visually-hidden">{ name }</span>

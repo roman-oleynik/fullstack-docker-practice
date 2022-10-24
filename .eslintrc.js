@@ -17,4 +17,9 @@ module.exports = {
     'webpack.config.js',
     '.eslintrc.js'
   ],
+  rules: {
+    eqeqeq: "off",
+    curly: "error",
+    quotes: ["error", "single"]
+  }
 }
