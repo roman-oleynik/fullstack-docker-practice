@@ -19,7 +19,7 @@ export function TodoItem({ data, onToggleIsDone, onRemove, onEditName }: TodoIte
   const { name, isDone, todoId } = data;
 
   const [isEditModeEnabled, setIsEditModeEnabled] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>('');
 
   return (
     <li className="todo stack-small">

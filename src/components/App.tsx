@@ -17,7 +17,7 @@ import { TodoItem } from './TodoItem';
 
 export function App() {
   const [todos, setTodos] = useState<TodoItem[] | null>(null);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     fetch('/api/todos')
@@ -61,7 +61,7 @@ export function App() {
   };
 
   const addTodo = (name: string) => {
-    fetch(`/api/todos`, {
+    fetch('/api/todos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
