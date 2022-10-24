@@ -39,7 +39,7 @@ export function TodoItem({ data, onToggleIsDone, onRemove, onEditName }: TodoIte
               onChange={(e) => setInputValue(e.target.value)}
             />
             <button
-              disabled={!Boolean(inputValue)}
+              disabled={inputValue === ''}
               onClick={async () => {
                 // console.log({isDone, todoId, name: inputValue})
                 await onEditName({isDone, todoId, name: inputValue})

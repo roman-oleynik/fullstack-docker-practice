@@ -125,7 +125,7 @@ export function App() {
         <button
           type="submit"
           className="btn btn__primary btn__lg"
-          disabled={!Boolean(inputValue)}
+          disabled={inputValue === ''}
           onClick={() => addTodo(inputValue)}
         >
           Add
