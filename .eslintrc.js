@@ -18,8 +18,27 @@ module.exports = {
     '.eslintrc.js'
   ],
   rules: {
-    eqeqeq: "off",
-    curly: "error",
-    quotes: ["error", "single"]
+    "eqeqeq": "error",
+    "curly": "error",
+    "quotes": ["error", "single"],
+    "camelcase": "error",
+    "no-console": "error",
+    "max-params": ["error", 3],
+    "no-alert": "error",
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
   }
 }

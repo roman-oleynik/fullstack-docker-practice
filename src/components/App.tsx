@@ -21,12 +21,12 @@ export function App() {
 
   useEffect(() => {
     fetch('/api/todos')
-    .then(res => {
-      return res.json()
-    })
-    .then(({ Items }: TodosResponse) => {
-      setTodos(Items)
-    })
+      .then(res => {
+        return res.json()
+      })
+      .then(({ Items }: TodosResponse) => {
+        setTodos(Items)
+      })
   }, []);
 
   const toggleIsDone = ({ todoId, isDone, name }: TodoItem) => {
@@ -80,7 +80,6 @@ export function App() {
   };
 
   const editTodo = ({ todoId, isDone, name }: TodoItem) => {
-    console.log(name)
     fetch(`/api/todos/${todoId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -138,19 +137,18 @@ export function App() {
       >
         {
           todos === null ?
-          'Loading...' :
-          todos.length ? todos.map(el => {
-            return (
-              <TodoItem
-                key={el.todoId}
-                data={el}
-                onToggleIsDone={() => toggleIsDone(el)}
-                onEditName={(el) => editTodo(el)}
-                onRemove={() => removeTodo(el.todoId)}
-              />
-            );
-          }) :
-          'Todo list is empty'
+            'Loading...' :
+            todos.length ? todos.map(el => {
+              return (
+                <TodoItem
+                  key={el.todoId}
+                  data={el}
+                  onToggleIsDone={() => toggleIsDone(el)}
+                  onEditName={(el) => editTodo(el)}
+                  onRemove={() => removeTodo(el.todoId)}
+                />
+              );
+            }) : 'Todo list is empty'
         }
       </ul>
     </div>

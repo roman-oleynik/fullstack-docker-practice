@@ -32,24 +32,24 @@ export function TodoItem({ data, onToggleIsDone, onRemove, onEditName }: TodoIte
         />
         {
           isEditModeEnabled ?
-          <div>
-            <input
-              type="text"
-              defaultValue={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-            <button
-              disabled={inputValue === ''}
-              onClick={async () => {
-                // console.log({isDone, todoId, name: inputValue})
-                await onEditName({isDone, todoId, name: inputValue})
-                setIsEditModeEnabled(false);
-              }}
-            >Submit</button>
-          </div> :
-          <label className="todo-label" htmlFor={`todo-${todoId}`}>
-            { name }
-          </label>
+            <div>
+              <input
+                type="text"
+                defaultValue={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+              <button
+                disabled={inputValue === ''}
+                onClick={async () => {
+                  // console.log({isDone, todoId, name: inputValue})
+                  await onEditName({isDone, todoId, name: inputValue})
+                  setIsEditModeEnabled(false);
+                }}
+              >Submit</button>
+            </div> :
+            <label className="todo-label" htmlFor={`todo-${todoId}`}>
+              { name }
+            </label>
         }
         
       </div>
