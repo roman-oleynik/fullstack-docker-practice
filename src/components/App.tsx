@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 interface TodoItem {
   name: string
@@ -19,8 +18,6 @@ import { TodoItem } from './TodoItem';
 export function App() {
   const [todos, setTodos] = useState<TodoItem[] | null>(null);
   const [inputValue, setInputValue] = useState("");
-
-  const todoInput = useRef();
 
   useEffect(() => {
     fetch('/api/todos')
